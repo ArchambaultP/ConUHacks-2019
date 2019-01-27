@@ -28,6 +28,18 @@ app.get('/getProduce', function (req, res) {
         
 });
 
+app.get('/getListings', function (req, res) {
+
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
+    pool.query('SELECT * FROM Listings', (error, result) => {
+        if (error) throw error;
+ 
+        res.send(result);
+    });
+        
+});
 
 
 var server = app.listen(port, function () {
