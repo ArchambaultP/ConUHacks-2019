@@ -26,7 +26,6 @@ class ListComponent extends React.Component {
         arr.push(result.data[i].name);
       }
       this.setState({data: arr});
-      console.log(arr);
       
     })
   }

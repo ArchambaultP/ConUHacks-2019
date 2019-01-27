@@ -46,7 +46,6 @@ app.get('/getListings', function (req, res) {
 const passport = require('passport');
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(jsonParser);
 app.get('/success', (req, res) => res.send("Welcome "+req.query.username+"!!"));
 app.get('/error', (req, res) => res.send("error logging in"));
 
@@ -95,7 +94,8 @@ app.post('/Login',
   });
 
 app.post('/test',function(req,res){
-    res.send("Should Work");
+    console.log('works');
+    res.send({"message":"post done"});
 });
 
 var server = app.listen(port, function () {
