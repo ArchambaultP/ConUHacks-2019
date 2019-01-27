@@ -6,6 +6,7 @@ import {
   Route,
 } from 'react-router-dom'
 import SignupComponent from './SignupComponent';
+import LoginComponent from './LoginComponent';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
       <Router>
       <div className="App">
         <HeaderComponent />
+	<LoginComponent />
       <Route path="/login" component={SignupComponent} />
       </div>
       </Router>
