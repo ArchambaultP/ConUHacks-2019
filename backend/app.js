@@ -34,13 +34,17 @@ app.get('/getListings', function (req, res) {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
-    pool.query('SELECT * FROM Listings', (error, result) => {
+    pool.query(`SELECT quantity, first_name, last_name, email, name
+from Listings join Accounts on Listings.account_id = Accounts.id
+join Produce on Listings.produce_id = Produce.id`, (error, result) => {
         if (error) throw error;
  
         res.send(result);
     });
         
 });
+
+
 
 
 const passport = require('passport');
@@ -94,8 +98,8 @@ app.post('/Login',
   });
 
 app.post('/test',function(req,res){
-    console.log('works');
-    res.send({"message":"post done"});
+
+    console.log("test");
 });
 
 var server = app.listen(port, function () {
