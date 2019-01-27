@@ -4,6 +4,9 @@ import axios from 'axios'
 
 class ListComponent extends React.Component {
   
+  componentDidMount() {
+    this.test();
+  }
   test() {
     axios.get('http://localhost:8000/getProduce').then((result) => {
       console.log(result);
@@ -13,7 +16,6 @@ class ListComponent extends React.Component {
       return (
         <div>
         <h1>Hello World</h1>
-        <button onClick={ this.test }>test</button>
         </div>
       );
     }
