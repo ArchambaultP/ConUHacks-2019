@@ -13,10 +13,6 @@ class SignupComponent extends React.Component {
       this.setState({value: event.target.value});
     }
   
-    
-    handleChange(event) {
-        this.setState({value: event.target.value});
-      }
     handleSubmit(event) {
         console.log(event.target[0].value);
         console.log(event.target[1].value);

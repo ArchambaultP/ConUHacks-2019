@@ -4,9 +4,6 @@ import HeaderComponent from './HeaderComponent';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  Switch,
-  Redirect
 } from 'react-router-dom'
 import SignupComponent from './SignupComponent';
 
@@ -18,7 +15,6 @@ class App extends Component {
         <HeaderComponent />
       <Route path="/login" component={SignupComponent} />
       </div>
-
       </Router>
     );
   }
