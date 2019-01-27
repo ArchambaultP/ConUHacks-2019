@@ -17,6 +17,9 @@ const port = 8000;
 
 app.get('/getProduce', function (req, res) {
 
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
     pool.query('SELECT * FROM Produce', (error, result) => {
         if (error) throw error;
  
@@ -24,6 +27,8 @@ app.get('/getProduce', function (req, res) {
     });
         
 });
+
+
 
 var server = app.listen(port, function () {
  

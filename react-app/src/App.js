@@ -6,7 +6,11 @@ import {
   Route,
 } from 'react-router-dom'
 import SignupComponent from './SignupComponent';
+<<<<<<< HEAD
 import ListComponent from './ListingComponent';
+=======
+import LoginComponent from './LoginComponent';
+>>>>>>> a3629e458820e24c22579981a169209f0035129e
 
 class App extends Component {
   render() {
@@ -14,6 +18,7 @@ class App extends Component {
       <Router>
       <div className="App">
         <HeaderComponent />
+	<LoginComponent />
       <Route path="/login" component={SignupComponent} />
       <Route path="/listings" component={ListComponent} />
       </div>
