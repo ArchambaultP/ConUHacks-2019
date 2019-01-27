@@ -5,7 +5,7 @@ import axios from 'axios'
 class ListComponent extends React.Component {
   
   test() {
-    axios.get('http://localhost:3000/api/posts').then((result) => {
+    axios.get('http://localhost:8000/getProduce').then((result) => {
       console.log(result);
     })
   }
