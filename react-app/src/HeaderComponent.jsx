@@ -26,6 +26,9 @@ class HeaderComponent extends React.Component {
               <NavItem>
                 <Link to="/login">Log In</Link>
               </NavItem>
+              <NavItem>
+                <Link to="/listings">Listings</Link>
+              </NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
